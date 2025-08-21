@@ -1,5 +1,5 @@
 # Online ToDo List Manager
-> An online todo list manager with signup and login
+> An online Finance Managment web aplication using Django and DRF 
 
 ## in progress
 
