@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils import timezone
+
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -12,16 +12,16 @@ class Transaction(models.Model):
         Expense = 'Expense'
 
     title = models.CharField(max_length=50)
-    amount = models.models.FloatField()
+    amount = models.FloatField()
     status = models.CharField(
         max_length=10,
         choices=TypeChoices.choices,
-        default=StatusChoices.Expense
+        default=TypeChoices.Expense
     )
     date = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    notes = models.models.CharField(max_length=100)
+    notes = models.CharField(max_length=100)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     
     class Meta:
