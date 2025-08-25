@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from rest_framework import generics
+from .models import Budgets
+from .serializers import BudgetsSerializer
 
-# Create your views here.
+class BudgetsListCreateView(generics.ListCreateAPIView):
+        queryset = Budgets.objects.all()
+        serializer_class = BudgetsSerializer
+
+class BudgetsRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+        queryset = Budgets.objects.all()
+        serializer_class = BudgetsSerializer
