@@ -8,4 +8,4 @@ class BudgetsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Budgets
-        fields = (['title', 'total_amount','start_date','end_date','Is_Active','user'])
+        fields = (['title', 'total_amount','start_date','end_date','Is_Active'])
