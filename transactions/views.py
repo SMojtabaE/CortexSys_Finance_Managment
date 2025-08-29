@@ -12,6 +12,9 @@ class TransactionListCreateView(generics.ListCreateAPIView):
         def get_queryset(self):
                 queryset = Transaction.objects.filter(user=self.request.user)  
                 return queryset
+
+        def perform_create(self, serializer):
+                serializer.save(user=self.request.user)
         
 
 class TransactionRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
