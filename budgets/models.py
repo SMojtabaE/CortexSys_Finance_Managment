@@ -14,6 +14,7 @@ class Budgets(models.Model):
 
     @property
     def Is_Active(self):
+        # this property checks the date to see if is passed or not
         return self.start_date < timezone.now().date() < self.end_date
 
     class Meta:
